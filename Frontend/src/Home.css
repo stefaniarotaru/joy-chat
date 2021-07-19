@@ -1,0 +1,170 @@
+/* post */
+.PostsContainer {
+    max-width: 50%;
+    /* min-height: 100%; */
+}
+.Post {
+    padding: 0 4%;
+    color:rgb(221, 225, 230);
+    margin: 2% 5%;
+    /* height: 150px; */
+    background-color: rgb(89, 109, 129);
+    border: none;
+    border-radius: 8px;
+    /* max-width: 50%; */
+    display: block;
+    word-wrap: break-word;  
+    
+  }
+  
+  .Post h3, p {
+    margin: 20px;
+    padding: 0;
+  }
+
+  .PostComment input[type=text] {
+      background-color: rgb(142, 166, 190);
+      border: none;
+      border-radius: 10px;
+      padding: 10px;
+      width: 90%;
+  }
+
+  .PostComment {
+      margin: 10px;
+      
+  }
+
+/* homeProfile */
+
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    margin-left: auto;
+    margin-right: 10px;
+  }
+  
+  nav ul li {
+    display: block;
+    margin-left: 10px;
+    list-style: none;
+    float: left;
+  }
+  
+  .App-link {
+    color: #61dafb;
+    text-decoration: none;
+  }
+  
+  .App-link:hover {
+    color: white;
+  }
+  
+  .UserProfile {
+    width: 300px;
+  }
+
+  .ProfilePic {
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+
+    position:absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+  }
+
+  .PicBox {
+    position: relative;
+    margin-top: 30px;
+    background: linear-gradient(70deg, 
+    #8553ad, #81f7ff );
+    border-radius: 50%;
+    height: 215px;
+    width: 215px;
+  }
+  
+  .UserDetails {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  
+  ul.UserProfileLinks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding:0;
+    margin: 20px 0 0 0;
+  }
+  
+  ul.UserProfileLinks li {
+    display: flex;
+    background-color: #282c34;
+    padding: 10%;
+    border-radius: 8px;
+    margin: 10px 0 0 0;
+  }
+  
+  .AdsContainer {
+      color: black;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    width: 80%;
+    height: 300px;
+    align-items: center;
+    align-content: center;
+    background-color: gainsboro;
+    border: 1px solid #282c34;
+    border-radius: 8px;
+  }
+
+  .UserAchievements {
+    height: 20px;
+    padding-right: 5px;
+  }
+
+  .AchievemenContainer, .PostUserInfo, .PostComment, .VerticalAlign {
+    max-width: 100%;
+  }
+
+  .AchievementImg, .PostUserImg, .PostHeart, .AlignIcon {
+      display: inline-block;
+      vertical-align: middle;
+      height: auto;
+  }
+  .AchievementPoints, .PostUserName, .PostCommentBox, .AlignText {
+      display: inline-block;
+  }
+
+  .PostCommentBox {
+      min-width: 84%;
+  }
+
+  .WritePostBox {
+      /* background-color: red; */
+      margin: 2% 5%;
+  }
+
+  .WritePostBox textarea {
+    background-color: rgb(142, 166, 190);
+    border: none;
+    border-radius: 10px;
+    padding: 20px 0;
+    width: 100%;
+    font-size: larger;
+}
+
+
+.Search {
+    color: red;
+}
