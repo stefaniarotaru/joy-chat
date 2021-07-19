@@ -1,0 +1,120 @@
+body {
+  background-color: #495161;
+  color: #c4edf8;
+}
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+
+.App-header {
+  background-color: #282c34;
+  min-height: 5vh;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+
+.navBarIcon {
+  height: 35px;
+  padding: 15px;
+}
+
+.loginBar {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.loginButton {
+  background-color: transparent;
+  border: none;
+  text-decoration: none;
+  font-size: large;
+  
+  
+}
+.loginLink:link {
+  text-decoration: none;
+}
+.loginLink:visited {
+  color: rgb(181, 132, 204);
+  text-decoration: none;
+}
+
+.loginLink:hover {
+  color: #61dafb;
+  text-decoration: none;
+}
+
+.modal {
+  color: #61dafb;
+  background-color: #282c34;
+  margin: 15% auto;
+  padding: 20px;
+  /* border: 1px solid #888; */
+  border-radius: 8px;
+  width: 25%;
+  animation-name: animatetop;
+  animation-duration: 3s;
+  text-align: center;
+}
+
+.modalInput {
+  margin: 10px;
+  padding: 5px;
+  font-size: medium;
+}
+
+.modalButton {
+  border: none;
+  margin: 25px;
+  padding: 5px 20px;
+  border-radius: 8px;
+  background-color: #61dafb;
+  font-size: large;
+}
+
+.modalButton:hover {
+  background-color: rgb(181, 132, 204);
+  cursor: pointer;
+}
+
+.modalImgContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.modalImg {
+  height: 45px;
+  padding: 15px;
+}
+
+@keyframes animatetop {
+  from {bottom: -300px; opacity: 0;}
+  to {top: 0; opacity: 5;}
+}
+
+
+.Container {
+  display: flex;
+  margin: 0 25px 0 25px;
+}
+
+.ProfilePic {
+  height: 100px;
+  margin-top: 45px;
+}
+
