@@ -7,6 +7,9 @@ import store from '../../Icons/store.png';
 import achievement from '../../Icons/achievement.png';
 import settings from '../../Icons/settings.png';
 import logo from '../../Icons/logo.png';
+import LoginModal from './LoginModal';
+import RegisterModal from './RegisterModal';
+
 
 export default function NavBar() {
     const[loginModalIsOpen, setLoginModalIsOpen] = useState(false)
@@ -17,40 +20,8 @@ export default function NavBar() {
 
 
         <div className="loginBar">
-            <button className="loginButton"
-            onClick={() => setLoginModalIsOpen(true)}><Link className="loginLink" to="/login">Login</Link></button>
-
-            <Modal className ="modal" isOpen={loginModalIsOpen} onRequestClose = {() => setLoginModalIsOpen(false)}>
-
-                <div className="modalImgContainer">
-                    <img src={logo} className="modalImg" alt="logo"/>
-                    <h2>Log In</h2>
-                </div>
-
-                <input className="modalInput" type="text" placeholder="username"></input>
-                <br/>
-                <input className="modalInput" type="password" placeholder="password"></input>
-                <br/>
-                <button className="modalButton" type="submit" onClick={() => setLoginModalIsOpen(false)}>Log In</button>
-            </Modal>
-
-            <button className="loginButton"
-            onClick={() => setRegisterModalIsOpen(true)}><Link className="loginLink" to="/register">Register</Link></button>
-            <Modal className="modal" isOpen={registerModalIsOpen} onRequestClose = {() => setRegisterModalIsOpen(false)}>
-
-            <div className="modalImgContainer">
-                <img src={logo} className="modalImg" alt="logo"/>
-                <h2>Register</h2>
-                </div>
-
-                <input className="modalInput" type="text" placeholder="username"></input>
-                <br/>
-                <input className="modalInput" type="text" placeholder="email"></input>
-                <br/>
-                <input className="modalInput" type="password" placeholder="password"></input>
-                <br/>
-                <button className="modalButton" type="submit" onClick={() => setRegisterModalIsOpen(false)}>Register</button>
-            </Modal>
+            <LoginModal/>
+            <RegisterModal/>
         </div>
            
         <div className="navBar">
