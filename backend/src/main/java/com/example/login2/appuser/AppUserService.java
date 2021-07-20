@@ -32,7 +32,7 @@ public class AppUserService implements UserDetailsService {
                                 String.format(USER_NOT_FOUND_MSG, email)));
     }
 
-    public String signUpUser(AppUser appUser) {
+    public void signUpUser(AppUser appUser) {
         boolean userExists = appUserRepository
                 .findByEmail(appUser.getEmail())
                 .isPresent();
@@ -48,27 +48,28 @@ public class AppUserService implements UserDetailsService {
                 .encode(appUser.getPassword());
 
         appUser.setPassword(encodedPassword);
+        appUser.setEnabled(true);
 
         appUserRepository.save(appUser);
-
-        String token = UUID.randomUUID().toString();
-
-        ConfirmationToken confirmationToken = new ConfirmationToken(
-                token,
-                LocalDateTime.now(),
-                LocalDateTime.now().plusMinutes(15),
-                appUser
-        );
-
-        confirmationTokenService.saveConfirmationToken(
-                confirmationToken);
+//
+//        String token = UUID.randomUUID().toString();
+//
+//        ConfirmationToken confirmationToken = new ConfirmationToken(
+//                token,
+//                LocalDateTime.now(),
+//                LocalDateTime.now().plusMinutes(15),
+//                appUser
+//        );
+//
+//        confirmationTokenService.saveConfirmationToken(
+//                confirmationToken);
 
 //        TODO: SEND EMAIL
 
-        return token;
+//        return token;
     }
 
-    public int enableAppUser(String email) {
-        return appUserRepository.enableAppUser(email);
-    }
+//    public int enableAppUser(String email) {
+//        return appUserRepository.enableAppUser(email);
+//    }
 }
