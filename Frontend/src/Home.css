@@ -1,6 +1,11 @@
 /* post */
 .PostsContainer {
-    max-width: 50%;
+    /* max-width: 50%; */
+    width: 50%;
+    min-width: 40%;
+    position: relative;
+    /* background-color: blue; */
+    /* border-left: 1px solid rgb(93, 93, 94); */
     /* min-height: 100%; */
 }
 .Post {
@@ -8,12 +13,14 @@
     color:rgb(221, 225, 230);
     margin: 2% 5%;
     /* height: 150px; */
-    background-color: rgb(89, 109, 129);
-    border: none;
-    border-radius: 8px;
+    /* background-color:red; */
+    border-bottom: 0.5px solid rgb(93, 93, 94);
+    /* border-radius: 8px; */
     /* max-width: 50%; */
     display: block;
     word-wrap: break-word;  
+    width: 80%;
+    position: inherit;
     
   }
   
@@ -23,7 +30,7 @@
   }
 
   .PostComment input[type=text] {
-      background-color: rgb(142, 166, 190);
+      background-color: rgb(83, 84, 85);
       border: none;
       border-radius: 10px;
       padding: 10px;
@@ -64,6 +71,7 @@ nav {
   
   .UserProfile {
     width: 300px;
+    border-right: 1px solid rgb(93, 93, 94);
   }
 
   .ProfilePic {
@@ -83,8 +91,8 @@ nav {
   .PicBox {
     position: relative;
     margin-top: 30px;
-    background: linear-gradient(70deg, 
-    #8553ad, #81f7ff );
+    background: linear-gradient(60deg, 
+     #4a2369, #8553ad,#227c97, #81f7ff );
     border-radius: 50%;
     height: 215px;
     width: 215px;
@@ -156,7 +164,7 @@ nav {
   }
 
   .WritePostBox textarea {
-    background-color: rgb(142, 166, 190);
+    background-color: rgb(83, 84, 85);
     border: none;
     border-radius: 10px;
     padding: 20px 0;
@@ -166,5 +174,17 @@ nav {
 
 
 .Search {
-    color: red;
+    background-color: rgb(83, 84, 85);
+    border: none;
+    border-radius: 15px;
+    padding: 10px;
+    margin-top: 5%;
+}
+
+.FriendsContainer {
+  /* background-color: red; */
+  width: 20%;
+  border-left: 1px solid rgb(93, 93, 94);
+  padding: 10px;
+  text-align: center;
 }

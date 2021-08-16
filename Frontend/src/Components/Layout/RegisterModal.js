@@ -34,7 +34,10 @@ export default function RegisterModal() {
     return (
         <div>
             <button className="loginButton"
-            onClick={() => setRegisterModalIsOpen(true)}><Link className="loginLink" to="/register">Register</Link></button>
+            onClick={() => setRegisterModalIsOpen(true)}>
+                <Link className="loginLink" >Register</Link>
+                {/* Register */}
+            </button>
             <Modal className="modal" isOpen={registerModalIsOpen} onRequestClose = {() => setRegisterModalIsOpen(false)}>
 
             <div className="modalImgContainer">
@@ -50,7 +53,7 @@ export default function RegisterModal() {
                 <br/>
                 <button className="modalButton" type="submit" onClick={() => {
                     register();
-                    // setRegisterModalIsOpen(false);
+                    setRegisterModalIsOpen(false);
                     }}>Register</button>
                 <p>{registerMessage}</p>
             </Modal>

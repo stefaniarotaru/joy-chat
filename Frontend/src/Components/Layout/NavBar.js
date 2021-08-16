@@ -12,8 +12,7 @@ import RegisterModal from './RegisterModal';
 
 
 export default function NavBar() {
-    const[loginModalIsOpen, setLoginModalIsOpen] = useState(false)
-    const[registerModalIsOpen, setRegisterModalIsOpen] = useState(false)
+
     
     return (
         <header className="App-header">

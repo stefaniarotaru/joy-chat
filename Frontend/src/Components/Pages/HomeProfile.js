@@ -16,7 +16,9 @@ function HomeProfile() {
         <div className="UserProfile">
             <div className="UserDetails">
                 <div className="PicBox">
+                <Link to="/profile">
                 <img src={myPic} className="ProfilePic" alt="profile-pic" />
+                </Link>
                 </div>
                 <p>Jane Doe</p>
                 <div className="AchievementContainer">

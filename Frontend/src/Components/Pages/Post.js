@@ -2,9 +2,18 @@ import React from 'react'
 import '../../Home.css';
 import profile from '../../Icons/profile.png';
 import heart from '../../Icons/heart.png';
+import axios from 'axios';
+import { useState } from 'react';
+
 
 
 export default function Post() {
+    const postsUrl = "http://localhost:8080/joy/api/v1/post";
+    const [post, setPost] = useState([]);
+    axios.get(postsUrl).then(res => {
+        console.log(res.data)
+        // setPost(res.data.json());
+    })
 return (
     <div className="Post">
         <div className="PostUserInfo">
@@ -15,8 +24,8 @@ return (
                 <h3>User Name</h3>
             </div>
         </div>
-        <div>Post content
-            fhwfhgwjhfgwfgwgefhwehjfwhjefhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhjwefjhwefhwef
+        <div>
+            ...
         </div>
         <div className="PostComment">
             <div className="PostHeart">
