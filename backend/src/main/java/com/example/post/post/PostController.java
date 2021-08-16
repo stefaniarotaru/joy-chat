@@ -1,4 +1,4 @@
-package com.example.login2.post;
+package com.example.post.post;
 
 
 import lombok.AllArgsConstructor;
