@@ -13,9 +13,9 @@ import axios from 'axios';
 export default function RegisterModal() {
 
     const registerUrl = "http://localhost:8080/joy/api/v1/registration";
-
+    const roles= ["ROLE_USER"];
     const [registerModalIsOpen, setRegisterModalIsOpen] = useState(false);
-
+    const [repeatPassword, repeatSetPassword] = useState("");
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -25,18 +25,22 @@ export default function RegisterModal() {
     const updateEmail = (e) => setEmail(e.target.value);
     const updatePassword = (e) => setPassword(e.target.value);
 
-    const register = () => {
-        axios.post(registerUrl, {username, email, password}).then(() =>
-            setRegisterMessage("Registered successfully")
-        );
-    };
+    const register =  {
+        if(password == repeatPassword) {
+        axios.post(registerUrl, {username, email, password,roles})
+        .then(function (response) {
+            alert("register succesfulss")
+            window.location="/login"
+    })
+    } else {alert("incorect password")}
+  }
 
     return (
         <div>
             <button className="loginButton"
             onClick={() => setRegisterModalIsOpen(true)}>
                 <Link className="loginLink" >Register</Link>
-                {/* Register */}
+                Register
             </button>
             <Modal className="modal" isOpen={registerModalIsOpen} onRequestClose = {() => setRegisterModalIsOpen(false)}>
 
@@ -50,6 +54,8 @@ export default function RegisterModal() {
                 <input value={email} onChange={updateEmail} className="modalInput" type="text" placeholder="email"></input>
                 <br/>
                 <input value={password} onChange={updatePassword} className="modalInput" type="password" placeholder="password"></input>
+                <br/>
+                <input value={repeatPassword} onChange={repeatSetPassword} className="modalInput" type="password" placeholder="password"></input>
                 <br/>
                 <button className="modalButton" type="submit" onClick={() => {
                     register();
