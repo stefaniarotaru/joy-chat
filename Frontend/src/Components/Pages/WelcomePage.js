@@ -3,6 +3,7 @@ import { Router, Route } from 'react-router-dom';
 import '../../Home.css';
 import LoginModal from '../Layout/LoginModal';
 import RegisterModal from '../Layout/RegisterModal';
+import verifyUserToken from '../../Services/UserCheck';
 
 export default function WelcomePage() {
     return (

@@ -8,6 +8,8 @@ import achievement from '../../Icons/achievement.png';
 import settings from '../../Icons/settings.png';
 import logo from '../../Icons/logo.png';
 import axios from 'axios';
+import verifyUserToken from '../../Services/UserCheck';
+import Logout from '../../Services/Logout';
 
 
 export default function RegisterModal() {
@@ -40,8 +42,9 @@ export default function RegisterModal() {
         <div>
             <button className="loginButton"
             onClick={() => setRegisterModalIsOpen(true)}>
-                <Link className="loginLink" >Register</Link>
-                Register
+                {!verifyUserToken() && <Link className="loginLink" >Register</Link>}
+                {verifyUserToken() && <Link className="loginLink" onClick={Logout} >Log Out</Link>}
+                
             </button>
             <Modal className="modal" isOpen={registerModalIsOpen} onRequestClose = {() => setRegisterModalIsOpen(false)}>
 
@@ -58,10 +61,7 @@ export default function RegisterModal() {
                 <br/>
                 <input value={repeatPassword} onChange={updateRepeatPassword} className="modalInput" type="password" placeholder="password"></input>
                 <br/>
-                <button className="modalButton" type="submit" onClick={() => {
-                    register();
-                    setRegisterModalIsOpen(false);
-                    }}>Register</button>
+                <button className="modalButton" type="submit" onClick={register}>Register</button>
                 <p>{registerMessage}</p>
             </Modal>
         </div>

@@ -23,7 +23,7 @@ function App() {
 
       {/* <NavBar /> */}
       
-      <Route exact path="/"><Home authorized/></Route>
+      <Route exact path="/"><Home/></Route>
 
       <Route path="/profile"><Profile/></Route>
 

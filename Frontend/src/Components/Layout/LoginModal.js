@@ -9,6 +9,7 @@ import settings from '../../Icons/settings.png';
 import logo from '../../Icons/logo.png';
 import axios from 'axios';
 import { useHistory } from 'react-router';
+import verifyUserToken from '../../Services/UserCheck';
 
 export default function LoginModal() {
     const history = useHistory();
@@ -20,14 +21,28 @@ export default function LoginModal() {
     const [password, setPassword] = useState("");
     const [loginMessage, setLoginMessage] = useState("");
 
+    const [loginStatus, setLoginStatus] = useState("");
+
     const [authorized, setAuthorized] = useState(false);
 
     const updateUsername = (e) => setUsername(e.target.value);
     const updatePassword = (e) => setPassword(e.target.value);
 
     const login = () => {
-        axios.post(loginUrl, {username, password}).then(() =>
+        axios.post(loginUrl, {username: username, password: password}).then((response) => {
+            console.log(response.data)
             setLoginMessage("Welcome " + username + " !")
+            localStorage.setItem("user", JSON.stringify(response.data.username))
+            localStorage.setItem("token", JSON.stringify(response.data.accessToken))
+            if (response.data.message) {
+                setLoginStatus(false)
+            } else {
+                // window.location = "/profile"
+                history.push("/profile")
+                console.log("abcd")
+                
+            }
+        }
         );
     };
     return (
@@ -36,7 +51,7 @@ export default function LoginModal() {
             <button className="loginButton"
             onClick={() => setLoginModalIsOpen(true)}>
                 
-                <Link className="loginLink">Login</Link>
+            {!verifyUserToken() && <Link className="loginLink" >Login</Link>}
                 {/* Login */}
                 </button>
         
@@ -50,12 +65,8 @@ export default function LoginModal() {
         <br/>
         <input value={password} onChange={updatePassword} className="modalInput" type="password" placeholder="password"></input>
         <br/>
-        <button className="modalButton" type="submit" onClick={() => {
-            login();
-            setAuthorized(true);
-            history.push("/");
-            setLoginModalIsOpen(false);}
-            }>Log In</button>
+        <button className="modalButton" type="submit" onClick={login}
+            >Log In</button>
             <p>{loginMessage}</p>
             
         </Modal>

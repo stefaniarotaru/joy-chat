@@ -7,9 +7,12 @@ import NavBar from '../Layout/NavBar';
 import { Redirect } from 'react-router';
 import Friends from './Friends';
 import { useState, useEffect } from 'react';
+import axios from 'axios';
+// import { verify } from 'jsonwebtoken';
 
 
-export default function Home({authorized}) {
+
+export default function Home() {
   // if(!authorized) {
   //   return <Redirect to="/welcome"/>
   // }
@@ -18,18 +21,32 @@ export default function Home({authorized}) {
   const postsUrl = "http://localhost:8080/joy/api/v1/post";
   const [posts, setPosts] = useState([]);
   
+  
+
+  // useEffect(() => {
+  //     const fetchPosts = async() => {
+  //         const response = await fetch(postsUrl)
+  //         const postData = await response.json();
+  //         setPosts(postData);
+  //         console.log(postData);
+  //     }
+  //     fetchPosts();
+  // }, []);
 
   useEffect(() => {
-      const fetchPosts = async() => {
-          const response = await fetch(postsUrl)
-          const postData = await response.json();
-          setPosts(postData);
-          console.log(postData);
-      }
-      fetchPosts();
-  }, []);
+          axios.get(postsUrl).then(res => {
+        setPosts(res.data)
+        console.log(res.data)
+        // setPosts({posts})
+
+      })
+  }, [])
+
+    
+
     return (
       <div>
+        
       <NavBar/>
         <div className="Container">
         <HomeProfile/>
