@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "api/v1/post")
+@RequestMapping(path = "/joy/api/v1/post")
 @AllArgsConstructor
 
 @CrossOrigin(origins = "http://localhost:3000")

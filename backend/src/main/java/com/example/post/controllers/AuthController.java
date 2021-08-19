@@ -32,7 +32,7 @@ import com.example.post.repository.UserRepository;
 import com.example.post.security.jwt.JwtUtils;
 import com.example.post.security.services.UserDetailsImpl;
 
-@CrossOrigin(origins = "*", maxAge = 3600)
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("joy/api/v1/")
 public class AuthController {

@@ -15,7 +15,7 @@ export default function RegisterModal() {
     const registerUrl = "http://localhost:8080/joy/api/v1/registration";
     const roles= ["ROLE_USER"];
     const [registerModalIsOpen, setRegisterModalIsOpen] = useState(false);
-    const [repeatPassword, repeatSetPassword] = useState("");
+    const [repeatPassword, setRepeatPassword] = useState("");
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -24,11 +24,12 @@ export default function RegisterModal() {
     const updateUsername = (e) => setUsername(e.target.value);
     const updateEmail = (e) => setEmail(e.target.value);
     const updatePassword = (e) => setPassword(e.target.value);
+    const updateRepeatPassword = (e) => setRepeatPassword(e.target.value);
 
-    const register =  {
-        if(password == repeatPassword) {
+    const register = () =>  {
+        if(password === repeatPassword) {
         axios.post(registerUrl, {username, email, password,roles})
-        .then(function (response) {
+        .then((response) => {
             alert("register succesfulss")
             window.location="/login"
     })
@@ -55,7 +56,7 @@ export default function RegisterModal() {
                 <br/>
                 <input value={password} onChange={updatePassword} className="modalInput" type="password" placeholder="password"></input>
                 <br/>
-                <input value={repeatPassword} onChange={repeatSetPassword} className="modalInput" type="password" placeholder="password"></input>
+                <input value={repeatPassword} onChange={updateRepeatPassword} className="modalInput" type="password" placeholder="password"></input>
                 <br/>
                 <button className="modalButton" type="submit" onClick={() => {
                     register();
