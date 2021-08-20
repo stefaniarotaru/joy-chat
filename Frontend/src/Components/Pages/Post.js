@@ -4,12 +4,13 @@ import profile from '../../Icons/profile.png';
 import heart from '../../Icons/heart.png';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-
+// import { Upvote, upvote } from './Upvote';
+import Upvote from './Upvote';
 
 
 const Post = (props) => {
 
-    
+const post = props.post;
 
 return (
     <div className="Post">
@@ -20,14 +21,15 @@ return (
             <div className="PostUserName">
                 <h3>User Name</h3>
             </div>
+            
         </div>
         <div>
-            {props.postContent}
+            {post.postContent}
         </div>
         <div className="PostComment">
-            <div className="PostHeart">
-                <span title="Heart it!"><img className="navBarIcon" src={heart}/></span>
-            </div>
+    
+            <Upvote upvotes = {post.upvotes} postId = {post.id}/>
+               
             <div className="PostCommentBox">
                 <input type="text" placeholder="Add a comment "></input>
             </div>

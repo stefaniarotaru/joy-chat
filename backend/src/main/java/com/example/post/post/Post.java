@@ -20,4 +20,7 @@ public class Post {
     @Column(name = "post_content")
     private String postContent;
 
+    @Column(name = "upvotes")
+    private int upvotes;
+
 }

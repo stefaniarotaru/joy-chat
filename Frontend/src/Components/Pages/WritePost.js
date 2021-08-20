@@ -22,11 +22,11 @@ export default function WritePost() {
         <div className="WritePostBox">
             {/* <textarea placeholder="Update your status!"/> */}
                 <div>
-                    <label>Post</label>
-                    <input type="text" placeholder="sometext"
+                    {/* <label>Post</label> */}
+                    <textarea placeholder="Write a post!"
                     value={post} onChange={(e) =>
                     setPost(e.target.value)}/>
-                    <h3>{post}</h3>
+                    {/* <h3>{post}</h3> */}
                 </div>
                 <button onClick={addPost}>Post</button>
         </div>

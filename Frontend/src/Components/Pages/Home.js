@@ -13,36 +13,16 @@ import axios from 'axios';
 
 
 export default function Home() {
-  // if(!authorized) {
-  //   return <Redirect to="/welcome"/>
-  // }
-
 
   const postsUrl = "http://localhost:8080/joy/api/v1/post";
   const [posts, setPosts] = useState([]);
-  
-  
-
-  // useEffect(() => {
-  //     const fetchPosts = async() => {
-  //         const response = await fetch(postsUrl)
-  //         const postData = await response.json();
-  //         setPosts(postData);
-  //         console.log(postData);
-  //     }
-  //     fetchPosts();
-  // }, []);
 
   useEffect(() => {
           axios.get(postsUrl).then(res => {
         setPosts(res.data)
         console.log(res.data)
-        // setPosts({posts})
-
       })
   }, [])
-
-    
 
     return (
       <div>
@@ -51,12 +31,12 @@ export default function Home() {
         <div className="Container">
         <HomeProfile/>
 
-
-        {/* <button onClick = {() => console.log(posts)}>Show posts</button> */}
         <div className="PostsContainer">
         <WritePost/>
-        {posts.map(post => (<Post postContent={post.postContent}/>))}
+        {/* {posts.map(post => (<Post postContent={post.postContent} upvotes={post.upvotes}/>))} */}
+        {posts.map(post => (<Post post={post}/>))}
         </div>
+
         <Friends/>
       </div>
         </div>

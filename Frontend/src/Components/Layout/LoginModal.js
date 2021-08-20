@@ -38,7 +38,7 @@ export default function LoginModal() {
                 setLoginStatus(false)
             } else {
                 // window.location = "/profile"
-                history.push("/profile")
+                history.push("/")
                 console.log("abcd")
                 
             }

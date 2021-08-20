@@ -10,7 +10,6 @@ import java.util.List;
 @RestController
 @RequestMapping(path = "/joy/api/v1/post")
 @AllArgsConstructor
-
 @CrossOrigin(origins = "http://localhost:3000")
 public class PostController {
 
@@ -27,6 +26,12 @@ public class PostController {
     public ResponseEntity<List<Post>> getAll() {
         List<Post> allPosts = postService.getAllPosts();
         return ResponseEntity.ok(allPosts);
+    }
+
+    @PutMapping("/{postId}")
+    public ResponseEntity<Integer> upvote(@PathVariable Long postId) {
+        return ResponseEntity.ok(postService.upvotePost(postId));
+
     }
 
 }

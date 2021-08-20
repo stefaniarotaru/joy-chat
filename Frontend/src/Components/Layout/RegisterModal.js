@@ -33,7 +33,7 @@ export default function RegisterModal() {
         axios.post(registerUrl, {username, email, password,roles})
         .then((response) => {
             alert("register succesfulss")
-            window.location="/login"
+            window.location="/welcome"
     })
     } else {alert("incorect password")}
   }
