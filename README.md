@@ -1,5 +1,9 @@
 # El Proyecte Grande - Prototype
 
+![Screenshot 1](Screenshots/imageedit_22_3237518288.png)
+![Screenshot 2](Screenshots/imageedit_24_4915473933.png)
+
+
 ## Story
 
 As your Codecool Journey comes closer to its conclusion, the time has come for a final Teamwork Project, 
