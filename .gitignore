@@ -1,0 +1,20 @@
+Frontend/.idea/
+Frontend/*.iml
+Frontend/.vscode/
+Frontend/node_modules/
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+backend/hs_err_pid*
+
+# maven
+backend/target/
+
+# gradle
+backend/build/
+
+# intellij
+backend/.idea/
+backend/*.iml
+
+# VS Code
+backend/.vscode/

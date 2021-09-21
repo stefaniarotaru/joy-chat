@@ -1,0 +1,234 @@
+/* post */
+.PostsContainer {
+    /* max-width: 50%; */
+    width: 50%;
+    min-width: 40%;
+    position: relative;
+    /* background-color: blue; */
+    /* border-left: 1px solid rgb(93, 93, 94); */
+    /* min-height: 100%; */
+}
+.Post {
+    padding: 0 4%;
+    color:rgb(221, 225, 230);
+    margin: 2% 5%;
+    /* height: 150px; */
+    /* background-color:red; */
+    border-bottom: 0.5px solid rgb(93, 93, 94);
+    /* border-radius: 8px; */
+    /* max-width: 50%; */
+    display: block;
+    word-wrap: break-word;  
+    width: 80%;
+    position: inherit;
+
+    
+  }
+  
+  .Post h3, p {
+    margin: 20px;
+    padding: 0;
+  }
+
+  .PostComment input[type=text] {
+      background-color: rgb(83, 84, 85);
+      border: none;
+      border-radius: 10px;
+      padding: 10px;
+      width: 90%;
+  }
+
+  .PostComment {
+      margin: 10px 0;
+      display: flex;
+  }
+
+/* homeProfile */
+
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    margin-left: auto;
+    margin-right: 10px;
+  }
+  
+  nav ul li {
+    display: block;
+    margin-left: 10px;
+    list-style: none;
+    float: left;
+  }
+  
+  .App-link {
+    color: #61dafb;
+    text-decoration: none;
+  }
+  
+  .App-link:hover {
+    color: white;
+  }
+  
+  .UserProfile {
+    width: 300px;
+    border-right: 1px solid rgb(93, 93, 94);
+  }
+
+  .ProfilePic {
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+
+    position:absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+  }
+
+  .PicBox {
+    position: relative;
+    margin-top: 30px;
+    background: linear-gradient(60deg, 
+     #4a2369, #8553ad,#227c97, #81f7ff );
+    border-radius: 50%;
+    height: 215px;
+    width: 215px;
+  }
+  
+  .UserDetails {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  
+  ul.UserProfileLinks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding:0;
+    margin: 20px 0 0 0;
+  }
+  
+  ul.UserProfileLinks li {
+    display: flex;
+    background-color: #282c34;
+    padding: 10%;
+    border-radius: 8px;
+    margin: 10px 0 0 0;
+  }
+  
+  .AdsContainer {
+      color: black;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    width: 80%;
+    height: 300px;
+    align-items: center;
+    align-content: center;
+    background-color: gainsboro;
+    border: 1px solid #282c34;
+    border-radius: 8px;
+  }
+
+  .UserAchievements {
+    height: 20px;
+    padding-right: 5px;
+  }
+
+  .AchievemenContainer, .PostUserInfo, .PostComment, .VerticalAlign {
+    max-width: 100%;
+  }
+
+  .AchievementImg, .PostUserImg, .AlignIcon {
+      display: inline-block;
+      vertical-align: middle;
+      height: auto;
+  }
+  .AchievementPoints, .PostUserName, .PostCommentBox, .AlignText {
+      display: inline-block;
+  }
+
+  .PostCommentBox {
+      min-width: 84%;
+  }
+
+  .WritePostBox {
+      /* background-color: red; */
+      margin: 2% 5%;
+  }
+
+  .WritePostBox textarea {
+    background-color: rgb(83, 84, 85);
+    border: none;
+    border-radius: 10px;
+    padding: 20px 0;
+    width: 100%;
+    font-size: larger;
+    color: honeydew;
+}
+
+.WritePostBox button {
+  background-color: #06729c;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: large;
+    color: honeydew;
+}
+
+.WritePostBox button:hover {
+background-color: #8553ad;
+box-shadow: 0 0 8px 5px rgb(31, 18, 37);
+cursor: pointer;
+}
+
+
+.Search {
+    background-color: rgb(83, 84, 85);
+    border: none;
+    border-radius: 15px;
+    padding: 10px;
+    margin-top: 5%;
+}
+
+.FriendsContainer {
+  /* background-color: red; */
+  width: 20%;
+  border-left: 1px solid rgb(93, 93, 94);
+  padding: 10px;
+  text-align: center;
+}
+
+.PostHeart button {
+  background-color: transparent;
+
+}
+
+.PostHeartCounter {
+  margin-right: 10px;
+  font-weight: bold;
+  line-height: 40px;
+}
+
+.PostHeart {
+  /* background-color: grey; */
+  width: 40px;
+  height: 40px;
+}
+
+.PostHeart img {
+  width: 100%;
+  height: 100%;
+}
+
+.UpvoteContainer {
+  display: flex;
+}
+
